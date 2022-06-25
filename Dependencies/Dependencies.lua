@@ -5,7 +5,7 @@ LibraryDir = {}
 Library = {}
 
 -- Include Directories
-	IncludeDir["glfw"] = "%{wks.location}/MinecraftRecoded/Dependencies/glfw-3.3.7/include/"
+	IncludeDir["glfw"] = "%{wks.location}/LearningVulkan/Dependencies/glfw-3.3.7/include/"
 	IncludeDir["VulkanSDK"] = "%{VULKAN_SDK}/Include/"
 
 -- Library Directories
