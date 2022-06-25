@@ -1,8 +1,8 @@
 include "Dependencies/premake/Custom/solutionitems.lua"
 
-workspace "__WORKSPACE_NAME__"
+workspace "MinecraftRecoded"
 	architecture "x86_64"
-	startproject "__PROJECT_NAME__"
+	startproject "MinecraftRecoded"
 
 	configurations { "Profile", "Debug", "Release", "Dist" }
 
@@ -36,5 +36,9 @@ OutputDir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
 include "Dependencies/premake/Custom/usestdpreproc.lua"
 include "Dependencies/Dependencies.lua"
 
+group "Dependencies/MinecraftRecoded"
+	include "MinecraftRecoded/Dependencies/glfw-3.3.7"
+group ""
+
 -- Add any projects here with 'include "__PROJECT_NAME__"'
-include "__PROJECT_NAME__"
+include "MinecraftRecoded"

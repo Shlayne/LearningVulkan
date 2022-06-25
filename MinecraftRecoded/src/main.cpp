@@ -1,15 +1,18 @@
 #if SYSTEM_WINDOWS
 
+#include "Core/Application.h"
+#include <iostream>
+
 int Main(int argc, char** argv)
 {
 	static_cast<void>(argc, argv);
 
-	// TODO: run your code, but please, please, please, not in this file.
-	// Just call a function here, or construct, run, and destruct you app.
-	// For example:
-	//	Application* pApplication = CreateApplication(argc, argv);
-	//	pApplication->Run();
-	//	delete pApplication;
+	core::Application* pApplication = new core::Application();
+	pApplication->Run();
+	delete pApplication;
+
+	std::cout << "Application completed.\n";
+	std::cin.get();
 
 	return 0;
 }

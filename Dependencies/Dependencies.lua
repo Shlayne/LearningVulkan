@@ -1,12 +1,15 @@
+VULKAN_SDK = os.getenv("VULKAN_SDK")
+
 IncludeDir = {}
 LibraryDir = {}
 Library = {}
 
 -- Include Directories
---	IncludeDir["__PROJECT_NAME__"] = "%{__PROJECT_DIR_NAME__}/__PROJECT_INCLUDE_PATH__"
+	IncludeDir["glfw"] = "%{wks.location}/MinecraftRecoded/Dependencies/glfw-3.3.7/include/"
+	IncludeDir["VulkanSDK"] = "%{VULKAN_SDK}/Include/"
 
 -- Library Directories
---	LibraryDir["__LIBRARY_DIR_NAME__"] = "%{__LIBRARY_DIR_NAME__}/__LIBRARY_DIR_PATH__"
+	LibraryDir["VulkanSDK"] = "%{VULKAN_SDK}/Lib/"
 
 -- Libraries
---	Library["__LIBRARY_NAME__"] = "%{LibraryDir.__LIBRARY_NAME__}/__LIBRARY_PATH__"
+	Library["VulkanSDK"] = "vulkan-1"

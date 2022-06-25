@@ -1,4 +1,4 @@
-project "__PROJECT_NAME__"
+project "MinecraftRecoded"
 	kind "ConsoleApp"
 	language "C++"
 	cppdialect "C++20"
@@ -10,8 +10,6 @@ project "__PROJECT_NAME__"
 
 	files {
 		"src/**.h",
-		"src/**.c",
-		"src/**.hpp",
 		"src/**.cpp",
 		"src/**.inl"
 	}
@@ -22,12 +20,18 @@ project "__PROJECT_NAME__"
 		-- "%{wks.location}/__PROJECT_NAME__/src",
 
 		-- Add any dependency includes here.
-		-- "%{IncludeDir.__PROJECT_NAME__}",
+		"%{IncludeDir.glfw}",
+		"%{IncludeDir.VulkanSDK}",
 	}
-	
+
+	libdirs {
+		"%{LibraryDir.VulkanSDK}"
+	}
+
 	-- Add any links dependency libs via their project names here.
 	links {
-		--	"__PROJECT_NAME__"
+		"glfw",
+		"%{Library.VulkanSDK}",
 	}
 
 	filter "system:windows"
